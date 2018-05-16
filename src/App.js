@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import { fetchPlaylists } from './actions/index'
 import PlaylistList from './containers/PlaylistList'
+import ActivePlaylist from './containers/ActivePlaylist'
 
 class App extends Component {
   componentDidMount() {
@@ -14,6 +15,7 @@ class App extends Component {
       <div className="App">
         moodify
         <PlaylistList playlists={this.props.playlists} />
+        <ActivePlaylist />
       </div>
     );
   }

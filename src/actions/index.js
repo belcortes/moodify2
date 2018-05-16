@@ -9,7 +9,7 @@ export function fetchPlaylists() {
   let parsed = queryString.parse(window.location.search);
   let accessToken = parsed.access_token;
 
-  return function (dispatch) {
+  return (dispatch) => {
     axios.get(url, { headers: {'Authorization': 'Bearer ' + accessToken} })
       .then((response) => dispatch({
         type: 'FETCH_PLAYLISTS',
@@ -21,3 +21,37 @@ export function fetchPlaylists() {
       }))
   }
 }
+
+export function selectPlaylist(playlist) {
+  let parsed = queryString.parse(window.location.search);
+  let accessToken = parsed.access_token;
+
+  return (dispatch) => {
+    axios.get(playlist.tracks.href, { headers: {'Authorization': 'Bearer ' + accessToken} })
+      .then((response) => dispatch({
+        type: 'SELECT_PLAYLIST',
+        payload: response.data
+      }))
+      .catch((response) => dispatch({
+        type: 'SELECT_PLAYLIST_FAILURE',
+        error: response.error
+      }))
+  }
+}
+
+// export function fetchValence(playlist) {
+//   let parsed = queryString.parse(window.location.search);
+//   let accessToken = parsed.access_token;
+//   const url =
+//   return (dispatch, getState) => {
+//     axios.get(playlist.tracks.href, { headers: {'Authorization': 'Bearer ' + accessToken} })
+//       .then((response) => dispatch({
+//         type: 'SELECT_PLAYLIST',
+//         payload: response.data
+//       }))
+//       .catch((response) => dispatch({
+//         type: 'SELECT_PLAYLIST_FAILURE',
+//         error: response.error
+//       }))
+//   }
+// }

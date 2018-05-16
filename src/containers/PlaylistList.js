@@ -1,7 +1,6 @@
 import React from 'react'
-// import { selectPlaylist, fetchActivePlaylistTracks, fetchValence } from '../actions/index'
-
-// import Playlist from '../components/Playlist'
+import { connect } from 'react-redux'
+import { selectPlaylist } from '../actions/index'
 
 const PlaylistList = (props) => {
 	if(!props.playlists) {
@@ -16,7 +15,12 @@ const PlaylistList = (props) => {
 					props.playlists.items.map((playlist) => {
 						return (
 							<li
-							key={playlist.name}>{playlist.name}</li>
+							  key={playlist.name}
+                onClick={() => {
+                  console.log('clicked')
+              	  props.selectPlaylist(playlist)
+                }}
+              >{playlist.name}</li>
 						)
 					})
 				}
@@ -25,10 +29,6 @@ const PlaylistList = (props) => {
 	)
 }
 
-export default PlaylistList
+const mapDispatchToProps = { selectPlaylist };
 
-// onClick={() => {
-// 	props.selectPlaylist(playlist)
-// 	props.fetchActivePlaylistTracks(playlist)
-  // props.fetchValence(playlist)
-// }
+export default connect(null, mapDispatchToProps)(PlaylistList)
