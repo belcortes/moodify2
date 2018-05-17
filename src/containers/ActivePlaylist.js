@@ -10,7 +10,6 @@ class ActivePlaylist extends Component {
 		return (
 			<div>
 				<h2>Total tracks: {this.props.playlist.total}</h2>
-        {console.log(this.props.playlist)}
 				{
 					this.props.playlist.items.map((track) => {
 						return (
@@ -28,11 +27,5 @@ function mapStateToProps(state){
 		playlist: state.activePlaylist
 	}
 }
-
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     fetchValence: () => { dispatch(fetchValence()); }
-//   };
-// }
 
 export default connect(mapStateToProps)(ActivePlaylist)
