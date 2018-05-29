@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
 
-import fetchPlaylistsReducer from './FetchPlaylistsReducer'
-import selectPlaylistReducer from './SelectPlaylistReducer'
+import fetchPlaylistsReducer from './fetchPlaylistsReducer'
+import selectPlaylistReducer from './selectPlaylistReducer'
+import fetchValenceReducer from './fetchValenceReducer'
 
 const rootReducer = combineReducers({
   playlists: fetchPlaylistsReducer,
-  activePlaylist: selectPlaylistReducer
+  activePlaylist: selectPlaylistReducer,
+  valence: fetchValenceReducer
 });
 
 export default rootReducer;

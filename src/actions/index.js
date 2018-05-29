@@ -1,11 +1,11 @@
 import axios from 'axios'
 import queryString from 'query-string';
-// import store from '../index.js'
+import store from '../index.js'
 
-const ROOT_URL = 'https://api.spotify.com/v1/me'
+const ROOT_URL = 'https://api.spotify.com/v1'
 
 export function fetchPlaylists() {
-  const url = `${ROOT_URL}/playlists`
+  const url = `${ROOT_URL}/me/playlists`
   let parsed = queryString.parse(window.location.search);
   let accessToken = parsed.access_token;
 
@@ -39,18 +39,26 @@ export function selectPlaylist(playlist) {
   }
 }
 
-// export function fetchValence(playlist) {
+// export function fetchValence() {
+//   // console.log('hello!')
 //   let parsed = queryString.parse(window.location.search);
 //   let accessToken = parsed.access_token;
-//   const url =
+//   // console.log(store.getState().activePlaylist)
+//   let trackIds = []
+//   let tracks = store.getState().activePlaylist.items
+//   tracks.forEach((track) => {
+//     trackIds.push(track.track.id)
+//   })
+//   let valenceArray = []
+//   console.log(trackIds)
 //   return (dispatch, getState) => {
-//     axios.get(playlist.tracks.href, { headers: {'Authorization': 'Bearer ' + accessToken} })
+//     axios.get(`${ROOT_URL}/audio-features/?${trackIds}`, { headers: {'Authorization': 'Bearer ' + accessToken} })
 //       .then((response) => dispatch({
-//         type: 'SELECT_PLAYLIST',
+//         type: 'FETCH_VALENCE',
 //         payload: response.data
 //       }))
 //       .catch((response) => dispatch({
-//         type: 'SELECT_PLAYLIST_FAILURE',
+//         type: 'FETCH_VALENCE_FAILURE',
 //         error: response.error
 //       }))
 //   }
