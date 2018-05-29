@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchValence } from '../actions/index'
 
 class ActivePlaylist extends Component {
-	// componentDidMount(){
-	//
-	// }
+
 	render() {
 		if(!this.props.playlist){
 			return <div>Select a playlist to get started</div>
@@ -13,7 +10,8 @@ class ActivePlaylist extends Component {
 
 		return (
 			<div>
-				<h2>Total tracks: {this.props.playlist.total}</h2>
+				<p>{this.props.valence}%</p>
+				<h3>Total tracks: {this.props.playlist.total}</h3>
 				{
 					this.props.playlist.items.map((track) => {
 						return (
@@ -32,6 +30,5 @@ function mapStateToProps(state){
 		valence: state.valence
 	}
 }
-const mapDispatchToProps = { fetchValence };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ActivePlaylist)
+export default connect(mapStateToProps)(ActivePlaylist)

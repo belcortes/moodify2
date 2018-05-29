@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { selectPlaylist } from '../actions/index'
+import { selectPlaylist, fetchValence } from '../actions/index'
 
 const PlaylistList = (props) => {
 	if(!props.playlists) {
@@ -17,8 +17,8 @@ const PlaylistList = (props) => {
 							<li
 							  key={playlist.name}
                 onClick={() => {
-                  console.log('clicked')
               	  props.selectPlaylist(playlist)
+									props.fetchValence(playlist)
                 }}
               >{playlist.name}</li>
 						)
@@ -29,6 +29,6 @@ const PlaylistList = (props) => {
 	)
 }
 
-const mapDispatchToProps = { selectPlaylist };
+const mapDispatchToProps = { selectPlaylist, fetchValence };
 
 export default connect(null, mapDispatchToProps)(PlaylistList)
