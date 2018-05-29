@@ -13,7 +13,6 @@ class ActivePlaylist extends Component {
 
 		return (
 			<div>
-				{this.props.fetchValence()}
 				<h2>Total tracks: {this.props.playlist.total}</h2>
 				{
 					this.props.playlist.items.map((track) => {

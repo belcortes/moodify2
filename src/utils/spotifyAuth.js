@@ -5,6 +5,15 @@ const spotifyApi = new SpotifyWebApi();
 
 let parsed = queryString.parse(window.location.search);
 let accessToken = parsed.access_token;
-const api = spotifyApi.setAccessToken(accessToken);
+spotifyApi.setAccessToken(accessToken);
 
-export default api;
+const userId = spotifyApi.getMe((err, data) => {
+  if (err) {
+    console.error(err)
+  } else {
+    console.log(data)
+    return data.id
+  }
+})
+
+export { userId, spotifyApi };
