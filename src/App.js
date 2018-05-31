@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import './App.css';
+import Header from './components/Header'
 
 import { fetchPlaylists } from './actions/index'
 import PlaylistList from './containers/PlaylistList'
@@ -13,9 +15,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        moodify
-        <PlaylistList playlists={this.props.playlists} />
-        <ActivePlaylist />
+        <Header />
+        <div className='app-container'>
+          <PlaylistList playlists={this.props.playlists} />
+          <ActivePlaylist />
+        </div>
       </div>
     );
   }

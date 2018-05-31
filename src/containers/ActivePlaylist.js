@@ -1,24 +1,26 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Track from '../components/Track'
 
 class ActivePlaylist extends Component {
 
 	render() {
 		if(!this.props.playlist){
-			return <div>Select a playlist to get started</div>
+			return <div className='app-container_outer-box'><p className='app-container_header'>Select a playlist to get started</p></div>
 		}
 
 		return (
-			<div>
-				<p>{this.props.valence}%</p>
-				<h3>Total tracks: {this.props.playlist.total}</h3>
-				{
-					this.props.playlist.items.map((track) => {
-						return (
-							<p key={track.track.id}>{track.track.name}</p>
-						)
-					})
-				}
+			<div className='app-container_outer-box'>
+				<p className='app-container_header'>{this.props.valence}% positive{this.props.playlist.total} tracks</p>
+				<div className='app-container_inner-box'>
+					<ul>
+						{
+							this.props.playlist.items.map((track, i) => {
+								return <Track key={i} track={track} />
+							})
+						}
+					</ul>
+				</div>
 			</div>
 		)
 	}

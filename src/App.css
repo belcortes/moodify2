@@ -1,28 +1,76 @@
-.App {
-  text-align: center;
-}
+/* Colors*/
+/*Body*/
+/* Font sizes*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+html {
+  height: 100vh;
+  font-size: 100%; }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+ul {
+  list-style-type: none; }
+
+body {
+  background: linear-gradient(145deg, #ffc867, #f037a6);
+  color: #1e3264;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  font-size: 1.4rem; }
+
+.app-container {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-around;
+  height: 80%; }
+
+.app-container_outer-box {
+  flex-grow: 1;
+  flex-basis: 0;
+  margin: 30px 50px;
+  height: 100%; }
+
+.app-container_inner-box {
+  border: 1px solid white;
+  height: 80%;
+  overflow-y: scroll; }
+
+.app-container_header {
+  margin-bottom: 50px;
+  font-weight: bold;
+  font-size: 35px; }
+
+.app-container_playlist {
   padding: 20px;
-  color: white;
-}
+  border-bottom: 1px solid white;
+  transition: .5s ease; }
 
-.App-title {
-  font-size: 1.5em;
-}
+.app-container_track {
+  padding: 10px;
+  font-size: 18px;
+  border-bottom: 1px solid white; }
 
-.App-intro {
-  font-size: large;
-}
+.app-container_playlist:hover {
+  cursor: pointer;
+  background-color: rgba(239, 239, 239, 0.3); }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+.app-container_playlist-subtitle {
+  font-size: 15px;
+  font-style: italic; }
+
+.active {
+  background-color: rgba(239, 239, 239, 0.8); }
+
+.header {
+  padding: 30px; }
+
+.header-subtitle {
+  font-weight: lighter;
+  font-size: 20px; }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; }

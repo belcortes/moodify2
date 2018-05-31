@@ -1,0 +1,39 @@
+// @font-face {
+// @font-face {
+//     font-family: 'Gotham';
+//     src: url('./fonts/Gotham-Thin.woff2') format('woff2'),
+//         url('./fonts/Gotham-Thin.woff') format('woff');
+//     font-weight: 100;
+//     font-style: normal;
+// }
+//
+// @font-face {
+//     font-family: 'Gotham';
+//     src: url('./fonts/Gotham-Light.woff2') format('woff2'),
+//         url('./fonts/Gotham-Light.woff') format('woff');
+//     font-weight: 300;
+//     font-style: normal;
+// }
+//
+// @font-face {
+//     font-family: 'Gotham';
+//     src: url('./fonts/Gotham-Bold.woff2') format('woff2'),
+//         url('./fonts/Gotham-Bold.woff') format('woff');
+//     font-weight: bold;
+//     font-style: normal;
+// }
+
+/* Colors*/
+$brand-primary: #ff7f00;
+$gray: #dddddd;
+$light-grey: #f9f9f9;
+$dark-grey: #777777;
+
+/*Body*/
+$body-background-color: linear-gradient(145deg,#ffc867,#f037a6);
+$body-default-color: #1e3264;
+$body-default-font-family: Arial, sans-serif;
+
+/* Font sizes*/
+$base-font-size: 1.4rem;
+$large-font-size: 2.2rem;

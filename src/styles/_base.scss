@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100vh;
+  font-size: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  background: $body-background-color;
+  color: $body-default-color;
+  height: 100vh;
+  font-family: $body-default-font-family;
+  font-size: $base-font-size;
+}
+//
+// h1 {
+//   font-weight: 300;
+//   margin-bottom: $space;
+// }
+//
+// h2 {
+//   font-size: $large-font-size;
+//   margin-bottom: $space;
+// }
+//
+// p {
+//   margin-bottom: $space;
+// }
+//
+// a {
+//   color: $body-default-color;
+// }

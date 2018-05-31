@@ -15,4 +15,4 @@ const userId = spotifyApi.getMe((err, data) => {
   }
 })
 
-export { userId, spotifyApi };
+export { spotifyApi, userId  };

@@ -1,34 +1,39 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { selectPlaylist, fetchValence } from '../actions/index'
+import React, { Component } from 'react'
+import Playlist from '../components/Playlist'
 
-const PlaylistList = (props) => {
-	if(!props.playlists) {
-		return <div>Loading...</div>
+class PlaylistList extends Component  {
+	state = {
+    activePlaylist: undefined
+  }
+
+	handleToggle = (index) => {
+		this.setState({ activePlaylist: index })
 	}
 
-	return (
-		<div>
-			<h2>{props.playlists.total} playlists</h2>
-			<ul>
-				{
-					props.playlists.items.map((playlist) => {
-						return (
-							<li
-							  key={playlist.name}
-                onClick={() => {
-              	  props.selectPlaylist(playlist)
-									props.fetchValence(playlist)
-                }}
-              >{playlist.name}</li>
-						)
-					})
-				}
-			</ul>
-		</div>
-	)
+	render(){
+		if(!this.props.playlists) {
+			return <div className='app-container_outer-box'>Loading...</div>
+		}
+
+		return (
+			<div className='app-container_outer-box'>
+				<p className='app-container_header'>{this.props.playlists.total} playlists</p>
+				<ul className='app-container_inner-box'>
+					{
+						this.props.playlists.items.map((playlist, i) => {
+							return <Playlist
+												key={i}
+												playlist={playlist}
+												index={i}
+												active={i === this.state.activePlaylist}
+												onToggle={this.handleToggle} />
+						})
+					}
+				</ul>
+			</div>
+		)
+	}
+
 }
 
-const mapDispatchToProps = { selectPlaylist, fetchValence };
-
-export default connect(null, mapDispatchToProps)(PlaylistList)
+export default PlaylistList
