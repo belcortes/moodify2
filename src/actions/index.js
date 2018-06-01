@@ -15,9 +15,39 @@ export function fetchPlaylists() {
   }
 }
 
-export function selectPlaylist(playlist) {
+export function fetchUser() {
+  return (dispatch) => {
+    spotifyApi.getMe()
+      .then((data) => dispatch({
+          type: 'FETCH_USER',
+          payload: data
+        })
+      )
+      .catch((error) => dispatch({
+        type: 'FETCH_USER_FAILURE',
+        error: error
+      }))
+  }
+}
+
+export function fetchTracks(playlist) {
   return (dispatch) => {
     spotifyApi.getPlaylistTracks(`${userId}`, playlist.id)
+      .then((data) => dispatch({
+          type: 'FETCH_TRACKS',
+          payload: data
+        })
+      )
+      .catch((error) => dispatch({
+        type: 'FETCH_TRACKS_FAILURE',
+        error: error
+      }))
+  }
+}
+
+export function selectPlaylist(playlist) {
+  return (dispatch) => {
+    spotifyApi.getPlaylist(`${userId}`, playlist.id)
       .then((data) => dispatch({
           type: 'SELECT_PLAYLIST',
           payload: data

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { selectPlaylist, fetchValence } from '../actions/index'
+import { fetchTracks, fetchValence, selectPlaylist } from '../actions/index'
 
 const Playlist = (props) => {
 
@@ -8,8 +8,9 @@ const Playlist = (props) => {
       <li
         className={props.active ? "app-container_playlist active" : "app-container_playlist"}
         onClick={(e) => {
-          props.selectPlaylist(props.playlist)
+          props.fetchTracks(props.playlist)
           props.fetchValence(props.playlist)
+          props.selectPlaylist(props.playlist)
           props.onToggle(props.index)
         }}
         >{props.playlist.name} <br/>
@@ -19,6 +20,6 @@ const Playlist = (props) => {
   	)
 }
 
-const mapDispatchToProps = { selectPlaylist, fetchValence };
+const mapDispatchToProps = { fetchTracks, fetchValence, selectPlaylist };
 
 export default connect(null, mapDispatchToProps)(Playlist);

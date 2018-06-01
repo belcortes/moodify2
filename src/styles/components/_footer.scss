@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
+}
+
+.footer_button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: $body-default-color;
+}
+
+// .footer_modal {
+//   transform-origin: 0% 50% 0px;
+//   transform: matrix(1, 0, 0, 1, 0, 0)
+// }

@@ -5,17 +5,17 @@ import Track from '../components/Track'
 class ActivePlaylist extends Component {
 
 	render() {
-		if(!this.props.playlist){
-			return <div className='app-container_outer-box'><p className='app-container_header'>Select a playlist to get started</p></div>
+		if(!this.props.tracks || !this.props.playlist){
+			return <div className='app-container_outer-box app-container_outer-box_loading'><p className='app-container_header'>Select a playlist to get started</p></div>
 		}
 
 		return (
 			<div className='app-container_outer-box'>
-				<p className='app-container_header'>{this.props.valence}% positive{this.props.playlist.total} tracks</p>
+				<p className='app-container_header-with-subtitle'>{this.props.valence}% positive<br/><span className='app-container_header_subtitle'>{this.props.playlist.name} | {this.props.tracks.total} tracks</span></p>
 				<div className='app-container_inner-box'>
 					<ul>
 						{
-							this.props.playlist.items.map((track, i) => {
+							this.props.tracks.items.map((track, i) => {
 								return <Track key={i} track={track} />
 							})
 						}
@@ -28,9 +28,12 @@ class ActivePlaylist extends Component {
 
 function mapStateToProps(state){
 	return {
+		tracks: state.activeTracks,
 		playlist: state.activePlaylist,
 		valence: state.valence
 	}
 }
+
+	// <p ></p>
 
 export default connect(mapStateToProps)(ActivePlaylist)

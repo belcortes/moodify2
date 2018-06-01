@@ -7,12 +7,6 @@ let parsed = queryString.parse(window.location.search);
 let accessToken = parsed.access_token;
 spotifyApi.setAccessToken(accessToken);
 
-const userId = spotifyApi.getMe((err, data) => {
-  if (err) {
-    console.error(err)
-  } else {
-    return data.id
-  }
-})
+let userId
 
 export { spotifyApi, userId  };
