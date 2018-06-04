@@ -24,30 +24,24 @@
 // }
 
 
-// background animation
-$green-blue: linear-gradient(145deg,#c3f0c8,#509bf5);
-$greenyellow-blupink: linear-gradient(145deg,#acde5b,#c95ae4);
-$yellow-pink: linear-gradient(145deg,#ffc867,#f037a6);
-$yellowblue-pink: linear-gradient(145deg,#d65757,#f037a6);
-$blue-pink: linear-gradient(145deg,#509bf5,#f037a6);
+@-webkit-keyframes Gradient {
+	0% {background-position: 0% 50%}
+	50% {background-position: 100% 50%}
+	100% {background-position: 0% 50%}
+}
 
-@keyframes colorchange
-{
-  0%   {background: $green-blue;}
-  25%  {background: $greenyellow-blupink;}
-  50%  {background: $yellow-pink;}
-  75%  {background: $yellowblue-pink;}
-  100% {background: $blue-pink;}
+@-moz-keyframes Gradient {
+	0% {background-position: 0% 50%}
+	50% {background-position: 100% 50%}
+	100% {background-position: 0% 50%}
 }
-@-webkit-keyframes colorchange
-{
-  0%   {background: $green-blue;}
-  25%  {background: $greenyellow-blupink;}
-  50%  {background: $yellow-pink;}
-  75%  {background: $yellowblue-pink;}
-  100% {background: $blue-pink;}
+
+@keyframes Gradient {
+	0% {background-position: 0% 50%}
+	50% {background-position: 100% 50%}
+	100% {background-position: 0% 50%}
 }
-$bg-animation: colorchange 50s infinite;
+$bg-animation: Gradient 15s ease infinite;
 
 /* Colors*/
 $brand-primary: #ff7f00;
@@ -56,10 +50,15 @@ $light-grey: #f9f9f9;
 $dark-grey: #777777;
 
 /*Body*/
-$body-background-color: linear-gradient(145deg,#ffc867,#f037a6);
+$body-background-color: linear-gradient(145deg,#ffc867,#f037a6) fixed;
 $body-default-color: #1e3264;
 $body-default-font-family: Arial, sans-serif;
 
 /* Font sizes*/
 $base-font-size: 1.4rem;
 $large-font-size: 2.2rem;
+
+// Window sizes
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$phone-width: 400px;

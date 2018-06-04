@@ -1,26 +1,26 @@
-@keyframes colorchange {
+@-webkit-keyframes Gradient {
   0% {
-    background: linear-gradient(145deg, #c3f0c8, #509bf5); }
-  25% {
-    background: linear-gradient(145deg, #acde5b, #c95ae4); }
+    background-position: 0% 50%; }
   50% {
-    background: linear-gradient(145deg, #ffc867, #f037a6); }
-  75% {
-    background: linear-gradient(145deg, #d65757, #f037a6); }
+    background-position: 100% 50%; }
   100% {
-    background: linear-gradient(145deg, #509bf5, #f037a6); } }
+    background-position: 0% 50%; } }
 
-@-webkit-keyframes colorchange {
+@-moz-keyframes Gradient {
   0% {
-    background: linear-gradient(145deg, #c3f0c8, #509bf5); }
-  25% {
-    background: linear-gradient(145deg, #acde5b, #c95ae4); }
+    background-position: 0% 50%; }
   50% {
-    background: linear-gradient(145deg, #ffc867, #f037a6); }
-  75% {
-    background: linear-gradient(145deg, #d65757, #f037a6); }
+    background-position: 100% 50%; }
   100% {
-    background: linear-gradient(145deg, #509bf5, #f037a6); } }
+    background-position: 0% 50%; } }
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
 
 /* Colors*/
 /*Body*/
@@ -38,17 +38,22 @@ ul {
   list-style-type: none; }
 
 body {
-  background: linear-gradient(145deg, #ffc867, #f037a6);
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
   color: #1e3264;
   height: 100vh;
   font-family: Arial, sans-serif;
-  font-size: 1.4rem; }
+  font-size: 1.4rem;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite; }
 
 .app-container {
   align-items: flex-start;
   display: flex;
   justify-content: space-around;
-  height: 80%; }
+  height: 80%;
+  flex-flow: wrap; }
 
 .app-container_outer-box {
   flex-grow: 1;
@@ -72,6 +77,11 @@ body {
 
 .app-container_header {
   margin-bottom: 50px;
+  font-weight: bold;
+  font-size: 35px; }
+
+.app-container_header-with-subtitle {
+  margin-bottom: 10px;
   font-weight: bold;
   font-size: 35px; }
 
@@ -103,7 +113,10 @@ body {
 .footer {
   display: flex;
   justify-content: flex-end;
-  padding: 30px; }
+  padding: 30px;
+  position: fixed;
+  bottom: 0;
+  right: 0; }
 
 .footer_button {
   background: none;
@@ -111,6 +124,35 @@ body {
   font-size: 16px;
   cursor: pointer;
   color: #1e3264; }
+
+.footer_button-close {
+  color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-top: 2em;
+  margin-right: 2em;
+  border: 2px solid white;
+  padding: 20px;
+  border-radius: 100px; }
+
+.footer_about-body {
+  font-size: 16px;
+  margin-top: 1em;
+  line-height: 2; }
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.5) !important; }
+
+.ReactModal__Content--after-open {
+  opacity: 1;
+  width: auto;
+  transition: all .75s ease; }
+
+.ReactModal__Content--before-close {
+  opacity: 0;
+  width: 1px;
+  transition: all .75s ease; }
 
 .header {
   padding: 30px;
@@ -121,6 +163,9 @@ body {
 .header-subtitle {
   font-weight: lighter;
   font-size: 20px; }
+  @media (max-width: 400px) {
+    .header-subtitle {
+      display: none; } }
 
 .App {
   display: flex;

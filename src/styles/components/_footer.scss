@@ -2,6 +2,9 @@
   display: flex;
   justify-content: flex-end;
   padding: 30px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 
 .footer_button {
@@ -12,7 +15,81 @@
   color: $body-default-color;
 }
 
-// .footer_modal {
-//   transform-origin: 0% 50% 0px;
-//   transform: matrix(1, 0, 0, 1, 0, 0)
+.footer_button-close {
+  color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-top: 2em;
+  margin-right: 2em;
+  border: 2px solid white;
+  padding: 20px;
+  border-radius: 100px;
+}
+
+.footer_about-body {
+  font-size: 16px;
+  margin-top: 1em;
+  line-height: 2;
+}
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+// .ReactModal__Content {
+//     opacity: 0;
+//     width: 1px;
+//     padding: 50px;
+//     // transition: 1s;
+//     // left: 0;
 // }
+
+// @-webkit-keyframes slideIn {
+//   0% {
+//     transform: translateX(-900px);
+//   }
+//   100% {
+//     transform: translateX(0);
+//   }
+// }
+// @-moz-keyframes slideIn {
+//   0% {
+//     transform: translateX(-900px);
+//   }
+//   100% {
+//     transform: translateX(0);
+//   }
+// }
+// @keyframes slideIn {
+//   0% {
+//     transform: translateX(-900px);
+//   }
+//   100% {
+//     transform: translateX(0);
+//   }
+// }
+// ReactModal__Content ReactModal__Content--after-open
+.ReactModal__Content {
+  // transition: opacity 400ms ease-in-out;
+  // animation: slide 0.5s forwards;
+  // animation-delay: 2s;
+
+  // background: rgba(0, 0, 0, 0.15);
+  &--after-open {
+    // transform-origin: 0% 50% 0px;
+    // transform: matrix(1, 0, 0, 1, 0, 0);
+    // -webkit-animation: slideIn 1s forwards;
+    // -moz-animation: slideIn 1s forwards;
+    // animation: slideIn 1s forwards;
+    opacity: 1;
+    width: auto;
+    transition: all .75s ease;
+    // animation: slide 0.5s forwards;
+    // animation-delay: 2s;
+  }
+  &--before-close {
+      opacity: 0;
+      width: 1px;
+      transition: all .75s ease;
+  }
+}

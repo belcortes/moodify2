@@ -8,4 +8,8 @@
 .header-subtitle {
   font-weight: lighter;
   font-size: 20px;
+
+  @media (max-width: $phone-width) {
+    display: none;
+  }
 }

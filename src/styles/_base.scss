@@ -14,11 +14,13 @@ ul {
 }
 
 body {
-  background: $body-background-color;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
   color: $body-default-color;
   height: 100vh;
   font-family: $body-default-font-family;
   font-size: $base-font-size;
-  // animation: $bg-animation;
-  // -webkit-animation: $bg-animation;
+  -webkit-animation: $bg-animation;
+	-moz-animation: $bg-animation;
+	animation: $bg-animation;
 }
