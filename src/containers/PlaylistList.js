@@ -17,7 +17,7 @@ class PlaylistList extends Component  {
 
 		return (
 			<div className='app-container_outer-box'>
-				<p className='app-container_header'>{this.props.playlists.total} playlists</p>
+				<p className='app-container_header transform'>{this.props.playlists.total} playlists</p>
 				<ul className='app-container_inner-box'>
 					{
 						this.props.playlists.items.map((playlist, i) => {

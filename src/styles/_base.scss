@@ -24,3 +24,7 @@ body {
 	-moz-animation: $bg-animation;
 	animation: $bg-animation;
 }
+
+.transform {
+  opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);
+}

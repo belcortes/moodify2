@@ -6,7 +6,7 @@ class ActivePlaylist extends Component {
 
 	render() {
 		if(!this.props.tracks || !this.props.playlist){
-			return <div className='app-container_outer-box app-container_outer-box_loading'><p className='app-container_header'>Select a playlist to get started</p></div>
+			return <div className='app-container_outer-box app-container_outer-box_loading transform'><p className='app-container_header'>Select a playlist to get started</p></div>
 		}
 
 		return (

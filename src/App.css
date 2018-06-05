@@ -44,9 +44,13 @@ body {
   height: 100vh;
   font-family: Arial, sans-serif;
   font-size: 1.4rem;
-  -webkit-animation: Gradient 15s ease infinite;
-  -moz-animation: Gradient 15s ease infinite;
-  animation: Gradient 15s ease infinite; }
+  -webkit-animation: Gradient 20s ease infinite;
+  -moz-animation: Gradient 20s ease infinite;
+  animation: Gradient 20s ease infinite; }
+
+.transform {
+  opacity: 1;
+  transform: matrix(1, 0, 0, 1, 0, 0); }
 
 .app-container {
   align-items: flex-start;
