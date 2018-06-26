@@ -164,6 +164,11 @@ body {
   align-items: center;
   justify-content: space-between; }
 
+.header-options {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column; }
+
 .header-subtitle {
   font-weight: lighter;
   font-size: 20px; }

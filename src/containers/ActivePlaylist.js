@@ -11,7 +11,7 @@ class ActivePlaylist extends Component {
 
 		return (
 			<div className='app-container_outer-box'>
-				<p className='app-container_header-with-subtitle'>{this.props.valence}% positive<br/><span className='app-container_header_subtitle'>{this.props.playlist.name} | {this.props.tracks.total} tracks</span></p>
+				<p className='app-container_header-with-subtitle'>{this.props.valence}% happy<br/><span className='app-container_header_subtitle'>{this.props.playlist.name} | {this.props.tracks.total} tracks</span></p>
 				<div className='app-container_inner-box'>
 					<ul>
 						{
