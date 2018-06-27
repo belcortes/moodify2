@@ -28,3 +28,12 @@ body {
 .transform {
   opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);
 }
+
+.app-appear, .active-appear {
+  opacity: 0.01;
+}
+
+.app-appear.app-appear-active, .active-appear.active-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
