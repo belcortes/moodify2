@@ -1,10 +1,10 @@
 import SpotifyWebApi from 'spotify-web-api-js';
-import queryString from 'query-string';
+import qs from 'qs';
 
 const spotifyApi = new SpotifyWebApi();
 
-let parsed = queryString.parse(window.location.search);
-let accessToken = parsed.access_token;
+let qsParsed = qs.parse(window.location.search);
+let accessToken = qsParsed['?access_token'];
 spotifyApi.setAccessToken(accessToken);
 
 let userId
