@@ -165,6 +165,22 @@ body {
   opacity: 0;
   transition: opacity 500ms ease-in-out; }
 
+@media (max-width: 400px) {
+  .ReactModal__Content {
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    padding: 1em !important; } }
+
+@media (max-width: 812px) {
+  .ReactModal__Content {
+    top: 5% !important;
+    bottom: 5% !important;
+    right: 5% !important;
+    left: 5% !important;
+    padding: 1em !important; } }
+
 .ReactModal__Overlay--after-open {
   opacity: 1; }
 

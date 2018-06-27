@@ -39,8 +39,30 @@
 
 .ReactModal__Overlay {
   background-color: rgba(0, 0, 0, 0.5) !important;
-    opacity: 0;
-    transition: opacity 500ms ease-in-out;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+
+  // @media (max-width: $phone-width) {
+  //   background-color:red !important;
+  // }
+}
+
+.ReactModal__Content {
+  @media (max-width: $phone-width) {
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    padding: 1em !important;
+  }
+
+  @media (max-width: $phone-sideways-width) {
+    top: 5% !important;
+    bottom: 5% !important;
+    right: 5% !important;
+    left: 5% !important;
+    padding: 1em !important;
+  }
 }
 
 .ReactModal__Overlay--after-open{
