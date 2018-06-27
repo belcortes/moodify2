@@ -39,7 +39,7 @@ class Footer extends Component {
     return (
   		<div className='footer'>
         <button onClick={this.openModal} className='footer_button'><img src={Icon} /></button>
-        <Modal isOpen={this.state.modalIsOpen} style={customStyles}>
+        <Modal isOpen={this.state.modalIsOpen} closeTimeoutMS={500} style={customStyles}>
           <button className='footer_button footer_button-close' onClick={this.closeModal}>Close</button>
           <h2>Does your music affect your mood?</h2>
           <p className='footer_about-body'>Or is it the other way around? In this app, music positiveness is found by calculating the valence of selected songs. Valence describes the musical positiveness conveyed by a track</p>
